@@ -40,6 +40,14 @@ export class NavHelperService {
         this.goToRoute(ROUTES_ENUM.Login);
     }
 
+    public goToAct(act: string): void {
+        this.goToRoutes([ROUTES_ENUM.Band, act]);
+    }
+
+    public goToDay(month: number, date: number): void {
+        this.goToRoutes([ROUTES_ENUM.Day, "month", month.toString(), "date", date.toString()]);
+    }
+
     // GENERAL
 
     private goToRoute(route: string): void {

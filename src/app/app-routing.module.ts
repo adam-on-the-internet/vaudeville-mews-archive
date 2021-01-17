@@ -8,6 +8,8 @@ import {ProfileComponent} from "./components/profile/profile.component";
 import {AdminComponent} from "./components/admin/admin.component";
 import {SearchComponent} from "./components/search/search.component";
 import {TodayComponent} from "./components/today/today.component";
+import {BandComponent} from "./components/band/band.component";
+import {DayComponent} from "./components/day/day.component";
 
 const routes: Routes = [
     // main
@@ -19,8 +21,10 @@ const routes: Routes = [
     // app
     {path: ROUTES_ENUM.Search, component: SearchComponent},
     {path: ROUTES_ENUM.Today, component: TodayComponent},
+    {path: ROUTES_ENUM.Band + "/:act", component: BandComponent},
+    {path: ROUTES_ENUM.Day + "/month/:month/date/:date", component: DayComponent},
     // default
-    {path: "**", redirectTo: "dashboard"},
+    {path: "**", redirectTo: ROUTES_ENUM.Dashboard},
 ];
 
 @NgModule({

@@ -19,6 +19,9 @@ import {CardComponent} from "./components/card/card.component";
 import {BodyAltComponent} from "./components/body-alt/body-alt.component";
 import {SearchComponent} from "./components/search/search.component";
 import {TodayComponent} from "./components/today/today.component";
+import { ShowCardComponent } from "./components/show-card/show-card.component";
+import { DayComponent } from "./components/day/day.component";
+import { BandComponent } from "./components/band/band.component";
 
 @NgModule({
     declarations: [
@@ -37,6 +40,9 @@ import {TodayComponent} from "./components/today/today.component";
         BodyAltComponent,
         SearchComponent,
         TodayComponent,
+        ShowCardComponent,
+        DayComponent,
+        BandComponent,
     ],
     imports: [
         BrowserModule,

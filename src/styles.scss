@@ -4,3 +4,8 @@
 html, body {
   overflow-x: hidden;
 }
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

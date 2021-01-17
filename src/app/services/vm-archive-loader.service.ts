@@ -22,7 +22,24 @@ export class VmArchiveLoaderService {
     public load(): void {
         this.vmArchiveService.clearValues();
         this.loadTodayShows();
-        this.loadAllShows();
+    }
+
+    public getShowsByDay(month, date): Observable<Show[]> {
+        const endpoint = `${controller}/month/${month}/date/${date}`;
+        const url = RestUrlBuilder.buildRestUrl({
+            service: ServiceUrl.BasicExpress,
+            controller: endpoint,
+        });
+        return this.http.get(url, CookieHelper.authHeaders) as Observable<Show[]>;
+    }
+
+    public getShowsByAct(act): Observable<Show[]> {
+        const endpoint = `${controller}/act/${act}`;
+        const url = RestUrlBuilder.buildRestUrl({
+            service: ServiceUrl.BasicExpress,
+            controller: endpoint,
+        });
+        return this.http.get(url, CookieHelper.authHeaders) as Observable<Show[]>;
     }
 
     private loadTodayShows() {
@@ -33,27 +50,11 @@ export class VmArchiveLoaderService {
                 });
     }
 
-    private loadAllShows() {
-        this.getAllShows()
-            .subscribe((res) => this.vmArchiveService.allShows = res,
-                (error) => {
-                    console.log("get all shows failed");
-                });
-    }
-
     private getTodayShows(): Observable<Show[]> {
         const url = RestUrlBuilder.buildRestUrl({
             service: ServiceUrl.BasicExpress,
             controller,
             collection: "today",
-        });
-        return this.http.get(url, CookieHelper.authHeaders) as Observable<Show[]>;
-    }
-
-    private getAllShows(): Observable<Show[]> {
-        const url = RestUrlBuilder.buildRestUrl({
-            service: ServiceUrl.BasicExpress,
-            controller,
         });
         return this.http.get(url, CookieHelper.authHeaders) as Observable<Show[]>;
     }
