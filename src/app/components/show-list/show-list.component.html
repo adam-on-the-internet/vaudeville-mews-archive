@@ -1,0 +1,16 @@
+<app-header [title]="'Shows For: ' + header" [subtitle]="subtitle"></app-header>
+<app-body>
+    <div class="row py-2">
+        <ng-container *ngIf="ready; else loading">
+            <ng-container *ngFor="let show of shows">
+                <div class="col-md-6 my-2">
+                    <app-show-card [show]="show"></app-show-card>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+</app-body>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>

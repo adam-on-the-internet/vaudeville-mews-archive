@@ -6,6 +6,7 @@ import {BodyComponent} from "../body/body.component";
 import {FormsModule} from "@angular/forms";
 import {CardComponent} from "../card/card.component";
 import {RouterTestingModule} from "@angular/router/testing";
+import {HeaderComponent} from "../header/header.component";
 
 describe("SearchComponent", () => {
     let component: SearchComponent;
@@ -13,7 +14,7 @@ describe("SearchComponent", () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [SearchComponent, LoadingComponent, BodyComponent, CardComponent],
+            declarations: [SearchComponent, LoadingComponent, BodyComponent, CardComponent, HeaderComponent],
             imports: [FormsModule, RouterTestingModule]
         })
             .compileComponents();

@@ -22,6 +22,7 @@ import {TodayComponent} from "./components/today/today.component";
 import { ShowCardComponent } from "./components/show-card/show-card.component";
 import { DayComponent } from "./components/day/day.component";
 import { BandComponent } from "./components/band/band.component";
+import { ShowListComponent } from "./components/show-list/show-list.component";
 
 @NgModule({
     declarations: [
@@ -43,6 +44,7 @@ import { BandComponent } from "./components/band/band.component";
         ShowCardComponent,
         DayComponent,
         BandComponent,
+        ShowListComponent,
     ],
     imports: [
         BrowserModule,

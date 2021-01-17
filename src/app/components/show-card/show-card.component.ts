@@ -14,13 +14,13 @@ export class ShowCardComponent {
     }
 
     public get lineup(): string {
-        let _lineup = "";
+        let tempLineup = "";
         this.show.acts.forEach((act, index) => {
             if (index > 0) {
-                _lineup += ", "
+                tempLineup += ", ";
             }
-            _lineup += act;
+            tempLineup += act;
         });
-        return _lineup;
+        return tempLineup;
     }
 }

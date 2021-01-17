@@ -17,6 +17,9 @@ export class BandComponent implements OnInit {
     }
 
     public get actFixed(): string {
+        if (!this.actReady) {
+            return "...";
+        }
         return this.act.replace("_", " ");
     }
 

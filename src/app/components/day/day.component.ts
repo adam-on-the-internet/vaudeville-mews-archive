@@ -17,6 +17,13 @@ export class DayComponent implements OnInit {
         return this.month !== null && this.date !== null;
     }
 
+    public get header(): string {
+        if (!this.dateReady) {
+            return "...";
+        }
+        return `${this.month}/${this.date}`;
+    }
+
     public get showsReady(): boolean {
         return this.shows !== null;
     }

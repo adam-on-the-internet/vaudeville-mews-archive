@@ -1,22 +1,4 @@
-<app-body>
-    <div class="row">
-        <div class="col-md-12 my-3">
-            <app-card>
-                <h1>Shows On This Day</h1>
-            </app-card>
-        </div>
-    </div>
-    <div class="row">
-        <ng-container *ngIf="vmArchiveService.todayReady; else loading">
-            <ng-container *ngFor="let show of vmArchiveService.todayShows">
-                <div class="col-md-6 my-3">
-                    <app-show-card [show]="show"></app-show-card>
-                </div>
-            </ng-container>
-        </ng-container>
-    </div>
-</app-body>
-
-<ng-template #loading>
-    <app-loading></app-loading>
-</ng-template>
+<app-show-list [header]="header"
+               [shows]="shows"
+               [ready]="ready">
+</app-show-list>

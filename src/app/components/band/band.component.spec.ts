@@ -7,6 +7,8 @@ import {BodyComponent} from "../body/body.component";
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {LoadingComponent} from "../loading/loading.component";
 import {RouterTestingModule} from "@angular/router/testing";
+import {HeaderComponent} from "../header/header.component";
+import {ShowListComponent} from "../show-list/show-list.component";
 
 describe("BandComponent", () => {
     let component: BandComponent;
@@ -14,7 +16,10 @@ describe("BandComponent", () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [BandComponent, CardComponent, ShowCardComponent, BodyComponent, LoadingComponent],
+            declarations: [
+                BandComponent, CardComponent, ShowCardComponent, BodyComponent, LoadingComponent,
+                HeaderComponent, ShowListComponent,
+            ],
             imports: [HttpClientTestingModule, RouterTestingModule, ]
         })
             .compileComponents();
