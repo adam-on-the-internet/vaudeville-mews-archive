@@ -1,0 +1,12 @@
+<h1>Shows On This Day</h1>
+<hr>
+<ng-container *ngIf="vmArchiveService.todayReady; else loading">
+    <ng-container *ngFor="let show of vmArchiveService.todayShows">
+        {{show | json}}
+        <hr>
+    </ng-container>
+</ng-container>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>

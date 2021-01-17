@@ -1,0 +1,51 @@
+<app-header
+        [title]="'Vaudeville Mews Archive'"
+></app-header>
+<app-body>
+    <div class="row">
+        <div class="col-md-6 my-3">
+            <a (click)="goToToday()">
+                <app-card [title]="'On This Day...'" [icon]="'fa-calendar'" [useHover]="true">
+                    <p>
+                        See shows that happened on this day in years past.
+                    </p>
+                </app-card>
+            </a>
+        </div>
+        <div class="col-md-6 my-3">
+            <a (click)="goToSearch()">
+                <app-card [title]="'Calendar'" [icon]="'fa-search'" [useHover]="true">
+                    <p>
+                        Search shows by date or band.
+                    </p>
+                </app-card>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+        </div>
+        <div class="col-md-6 my-3">
+            <a
+                    href="https://adam-on-the-internet.github.io/app-hub/donate"
+                    target="_blank"
+            >
+                <app-card [title]="'Donate to Charity'" [icon]="'fa-money'" [useHover]="true">
+                    <p>
+                        Like this free website? Pay it forward to a charity I support.
+                    </p>
+                </app-card>
+            </a>
+        </div>
+        <div class="col-md-6 my-3">
+            <a (click)="goToInfo()">
+                <app-card [title]="'More Information'" [icon]="'fa-info-circle'" [useHover]="true">
+                    <p>
+                        Just curious about this site? Get more information about this website.
+                    </p>
+                </app-card>
+            </a>
+        </div>
+    </div>
+</app-body>

@@ -1,0 +1,12 @@
+<h1>Search All Shows</h1>
+<hr>
+<ng-container *ngIf="vmArchiveService.allReady; else loading">
+    <ng-container *ngFor="let show of vmArchiveService.allShows">
+        {{show | json}}
+        <hr>
+    </ng-container>
+</ng-container>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>
