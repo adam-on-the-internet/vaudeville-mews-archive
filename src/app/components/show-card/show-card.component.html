@@ -1,12 +1,12 @@
 <app-card *ngIf="hasShow">
     <p>
         {{show.fullDate}}
-        <span class="badge badge-info mx-2" *ngIf="show.soldOut">SOLD OUT</span>
-        <span class="badge badge-info mx-2" *ngIf="show.postponed">POSTPONED</span>
-        <span class="badge badge-info mx-2" *ngIf="show.canceled">CANCELED</span>
+        <span class="badge badge-info mx-2 pull-right" *ngIf="show.soldOut">SOLD OUT</span>
+        <span class="badge badge-info mx-2 pull-right" *ngIf="show.postponed">POSTPONED</span>
+        <span class="badge badge-info mx-2 pull-right" *ngIf="show.canceled">CANCELED</span>
     </p>
     <hr>
-    <p *ngFor="let act of show.acts">
-        {{act}}
+    <p>
+        {{lineup}}
     </p>
 </app-card>

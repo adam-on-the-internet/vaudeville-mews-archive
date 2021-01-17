@@ -12,4 +12,15 @@ export class ShowCardComponent {
     public get hasShow(): boolean {
         return this.show !== null;
     }
+
+    public get lineup(): string {
+        let _lineup = "";
+        this.show.acts.forEach((act, index) => {
+            if (index > 0) {
+                _lineup += ", "
+            }
+            _lineup += act;
+        });
+        return _lineup;
+    }
 }
